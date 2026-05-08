@@ -11,6 +11,7 @@ public class Mola : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SFXManager.instance.somDoPulo.Play();
             oAnimator.Play("animacao-da-mola-subindo-2");
             //Ajuste a força do impulso conforme necessário
             other.gameObject.GetComponent<MovimentoDoJogador>().ImpulsionarJogador(forcaDaMola); 

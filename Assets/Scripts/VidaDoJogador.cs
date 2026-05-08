@@ -16,6 +16,7 @@ public class VidaDoJogador : MonoBehaviour
     }
     public void MachucarJogador()
     {
+        SFXManager.instance.somDeDano.Play();
         //Método obsoleto, substituído por FindFirstObjectByType para melhorar a performance e evitar possíveis erros de referência
         //FindObjectOfType<MovimentoDoJogador>().jogadorEstaVivo = false; 
         FindFirstObjectByType<MovimentoDoJogador>().jogadorEstaVivo = false;       

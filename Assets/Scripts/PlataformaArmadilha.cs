@@ -7,8 +7,6 @@ public class PlataformaArmadilha : MonoBehaviour
     public GameObject efeitoDeExplosao;
     private Animator oAnimator;
     public float tempoParaDesligar;
-
-
     void Awake()
     {
         oAnimator = GetComponent<Animator>();

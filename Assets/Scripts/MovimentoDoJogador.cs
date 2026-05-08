@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class MovimentoDoJogador : MonoBehaviour
 {
     [Header("Referências")]
@@ -44,7 +43,7 @@ public class MovimentoDoJogador : MonoBehaviour
         {
             MovimentarJogador();
             Pular();
-            WallJump();
+            WallJump();         
         }
     }
 /*
@@ -142,12 +141,15 @@ public class MovimentoDoJogador : MonoBehaviour
         }
     }
 
+
+// CÓDIGO VERDADEIRO
     private void Pular()
     {
         estaNoChao = Physics2D.OverlapCircle(verificadorDeChao.position, tamanhoDoRaioDeVerificacao, layerDoChao);
 
         if (Keyboard.current.spaceKey.isPressed && estaNoChao == true)
         {
+            SFXManager.instance.somDoPulo.Play();
             oRigidBody2D.AddForce(new Vector2(0f, alturaDoPulo), ForceMode2D.Impulse);
         }
 
@@ -156,7 +158,6 @@ public class MovimentoDoJogador : MonoBehaviour
             oAnimator.Play("jogador-pulando");
         }
     }
-
 
     private void WallJump()
     {
@@ -199,6 +200,7 @@ public class MovimentoDoJogador : MonoBehaviour
 
     public void ImpulsionarJogador(float forcaDoImpulso)
     {
+        
         //Reseta a velocidade vertical antes de aplicar a força para garantir um impulso consistente.
         oRigidBody2D.linearVelocity = new Vector2(oRigidBody2D.linearVelocity.x, 0f); 
         oRigidBody2D.AddForce(new Vector2(0f, forcaDoImpulso), ForceMode2D.Impulse);

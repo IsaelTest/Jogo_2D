@@ -7,6 +7,7 @@ public class Coletavel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SFXManager.instance.somDaColeta.Play();
             Instantiate(efeitoDeExplosao, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
