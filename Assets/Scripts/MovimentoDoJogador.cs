@@ -152,7 +152,6 @@ public class MovimentoDoJogador : MonoBehaviour
             SFXManager.instance.somDoPulo.Play();
             oRigidBody2D.AddForce(new Vector2(0f, alturaDoPulo), ForceMode2D.Impulse);
         }
-
         if (estaNoChao == false && estaNaParede == false)
         {
             oAnimator.Play("jogador-pulando");

@@ -5,9 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public string nomeDoMenuInicial;
     public string nomeDaProximaFase;
     public float tempoParaRecarregarNovaFase;
     public float tempoParaRecarregarAFase;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            VoltarAoMenu();
+        }
+    }
+
+    private void VoltarAoMenu()
+    {
+        SceneManager.LoadScene(nomeDoMenuInicial);
+    }
     public void GameOver()
     {
         RodarCoroutineRecarregarFase();

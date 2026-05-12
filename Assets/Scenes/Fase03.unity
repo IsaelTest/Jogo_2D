@@ -3202,6 +3202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d307c950ab31afe4092e56dd6eb17031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  nomeDoMenuInicial: Menu
   nomeDaProximaFase: Fase01
   tempoParaRecarregarNovaFase: 1
   tempoParaRecarregarAFase: 1
